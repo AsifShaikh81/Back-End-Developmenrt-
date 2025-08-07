@@ -1,0 +1,15 @@
+1)what is __dirname in node js?
+ In Node.js, __dirname is a global variable that represents the absolute path of the directory that contains the currently executing file.
+
+ __dirname ek special variable hota hai Node.js mein
+Jo tumhare current file ka folder ka full path batata hai.
+
+example:
+Socho tumhari file yeh jagah pe hai:
+==>C:\Users\Asif\Projects\app.js
+
+Agar tum console.log(__dirname); likhoge app.js ke andar, output hoga:
+==>C:\Users\Asif\Projects
+
+
+
