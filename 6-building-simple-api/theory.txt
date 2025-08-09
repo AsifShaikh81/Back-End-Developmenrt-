@@ -12,4 +12,18 @@ Agar tum console.log(__dirname); likhoge app.js ke andar, output hoga:
 ==>C:\Users\Asif\Projects
 
 
+🔁 What is JSON?
+JSON (JavaScript Object Notation) is a way to store and exchange data in a text format. It looks like a JavaScript object but is always a string.
+
+🧠 1. JSON.stringify()
+🔽 Converts: JavaScript object ➡️ JSON string
+
+🧠 2. JSON.parse()
+🔼 Converts: JSON string ➡️ JavaScript object
+
+⚠️ Quick Tip:
+JSON.stringify() = Think "Send" (convert to string)
+JSON.parse() = Think "Receive" (convert string to object)
+
+
 
