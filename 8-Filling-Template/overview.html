@@ -184,6 +184,22 @@
       .not-organic {
         display: none;
       }
+      .btn{
+        background-color:white;
+        color: #555;
+           padding: 12px;
+        font-family: 'Megrim', sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        transition: all ease 0.3s;
+        border: none;
+            border-radius: 100rem;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+        
+      }
+      .btn:hover{
+        background-color: #00e3ae;
+      }
     </style>
   </head>
 
@@ -193,7 +209,11 @@
 
       <div class="cards-container">
          {%PRODUCT_CARDS%}
+         <a href="/api">
+    <button class="btn">Go to Api Page </button>
+        </a>
       </div>
+      
     </div>
   </body>
 </html>

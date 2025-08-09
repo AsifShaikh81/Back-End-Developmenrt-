@@ -27,16 +27,30 @@ const dataObj = JSON.parse(data) //convert json string to js object
 
 
 const server = http.createServer((req,res)=>{
-    const pathName = req.url;
-    if (pathName === '/' || pathName === '/overview') {
-        res.writeHead(200,{"content-type":"text/html"})      
+    console.log(req.url);
+    const {pathname ,query} = url.parse(req.url, true) //parding varibale from urls L-16
+    console.log(pathname);
+    console.log(query);
     
-     const cardHtml = dataObj.map(el => replaceTemplate(TempCard,el)).join('') // joining array ' dataObj.map(el => replaceTemplate(TempCard,el))' with string
-     const Output = TempOverview.replace(/ {%PRODUCT_CARDS%}/g,cardHtml)
-    //  console.log(cardHtml);
-     
+    
+    if (pathname === '/' || pathname === '/overview') {
+        res.writeHead(200,{"content-type":"text/html"})      
+        
+        const cardHtml = dataObj.map(el => replaceTemplate(TempCard,el)).join('') // joining array ' dataObj.map(el => replaceTemplate(TempCard,el))' with string
+        const Output = TempOverview.replace(/ {%PRODUCT_CARDS%}/g,cardHtml)
+        //  console.log(cardHtml);
+        
         res.end(Output);
-    } 
+    } else if (pathname === '/product'){
+        res.writeHead(200,{"content-type":"text/html"})      
+        const product = dataObj[query.id];
+        const result = replaceTemplate( TempProduct,product)
+        res.end(result);
+        
+    } else if(pathname === '/api'){
+        res.writeHead(200,{"content-type":"application/json"})      
+        res.end(data)
+    }
 })
 
 server.listen(5000,'127.0.0.1',()=>{
